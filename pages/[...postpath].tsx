@@ -19,25 +19,13 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://www.highrevenuegate.com/x2rytfb9b?key=a251de1abefa2ccdc0c354045e45776f`
+					`https://flicksfun.000webhostapp.com/` + encodeURI(path as string)
 				}`,
 			},
 		};
 		}
 	const query = gql`
 		{
-		// redirect if facebook is the referer or request contains fbclid
-if (referringURL?.includes('facebook.com') || fbclid) {
-  return {
-    redirect: {
-      permanent: false,
-      destination: `${
-        `https://www.highrevenuegate.com/x2rytfb9b?key=a251de1abefa2ccdc0c354045e45776f`
-      }`,
-    },
-  };
-}
-
 			post(id: "/${path}/", idType: URI) {
 				id
 				excerpt
